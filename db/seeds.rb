@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+20.times do 
+    User.create(
+        name: Faker::Name.name, 
+        username: Faker::Name.first_name, 
+        email: Faker::Internet.email, 
+        password: 'hello')
+end 
+
+50.times do 
+    Friendship.create(
+        user: User.all.sample, 
+        friend: User.all.sample)
+end 
+
+30.times do 
+    FriendRequest.create_new
+end 
