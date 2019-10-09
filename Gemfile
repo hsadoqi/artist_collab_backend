@@ -40,8 +40,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-begin
-  require 'minitest/autorun'
 rescue LoadError => e
   raise e unless ENV['RAILS_ENV'] == "production"
 end
